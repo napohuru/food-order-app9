@@ -6,33 +6,14 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#e74c3c">
-  <title>宫头夜宵店 · 开桌点餐 · 58mm打印</title>
+  <title>夜宵点餐系统 · 开桌点餐 · 58mm打印</title>
   <style>
     :root{--primary:#e74c3c;--primary-dark:#c0392b;--bg:#f5f6fa;--card:#fff;--text:#2c3e50;--text-light:#7f8c8d;--border:#ecf0f1;--success:#27ae60;--warning:#e67e22;--shadow:0 2px 12px rgba(0,0,0,0.08);--radius:16px;--safe-bottom:env(safe-area-inset-bottom,0px);}
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:calc(70px + var(--safe-bottom));overscroll-behavior:none;}
-    .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:10px 20px;min-height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 20px rgba(231,76,60,.3);}
-    .header h1{font-size:20px;font-weight:700;letter-spacing:1px;}
-    .night-stall{position:relative;width:80px;height:52px;flex-shrink:0;}
-    .stall-roof{position:absolute;top:12px;left:6px;width:68px;height:12px;background:#fff;border-radius:4px 4px 2px 2px;box-shadow:0 2px 0 rgba(0,0,0,.08);}
-    .stall-roof::before,.stall-roof::after{content:'';position:absolute;top:-4px;width:10px;height:10px;background:#fff;border-radius:4px;transform:rotate(45deg);}
-    .stall-roof::before{left:-2px;}.stall-roof::after{right:-2px;}
-    .stall-body{position:absolute;top:22px;left:12px;width:56px;height:26px;background:#fff5eb;border-radius:2px;border:2px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-    .stall-window{position:absolute;left:6px;top:6px;width:14px;height:14px;background:#ffd77a;border-radius:2px;box-shadow:0 0 8px 2px rgba(255,215,122,.9);animation:windowGlow 2.4s ease-in-out infinite;}
-    @keyframes windowGlow{0%,100%{box-shadow:0 0 6px 1px rgba(255,215,122,.8);}50%{box-shadow:0 0 12px 3px rgba(255,215,122,1);}}
-    .stall-sign{font-size:14px;font-weight:900;color:var(--primary);margin-left:18px;font-family:'SimSun','PingFang SC',sans-serif;animation:ledSign 1.6s ease-in-out infinite;}
-    @keyframes ledSign{0%,100%{color:#ff5a3c;text-shadow:0 0 4px #ffb3a1,0 0 8px #ff8c73,0 0 14px #ff5a3c;}50%{color:#ffd0c4;text-shadow:0 0 2px #fff,0 0 4px #ffd0c4,0 0 8px #ff5a3c;}}
-    .stall-base{position:absolute;bottom:0;left:8px;width:64px;height:6px;background:#fff;border-radius:2px;opacity:.9;}
-    .lantern{position:absolute;top:2px;right:6px;width:12px;height:16px;background:radial-gradient(circle at 50% 40%,#ffe8a3,#e74c3c 70%);border-radius:50%/40%;box-shadow:0 0 8px 2px rgba(255,210,100,.7);animation:lanternSwing 2.6s ease-in-out infinite;transform-origin:top center;}
-    .lantern::after{content:'';position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);width:2px;height:4px;background:#ffd77a;}
-    @keyframes lanternSwing{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
-    .lantern-string{position:absolute;top:0;right:11px;width:2px;height:4px;background:rgba(255,255,255,.9);}
-    .steam{position:absolute;bottom:28px;width:6px;height:14px;background:rgba(255,255,255,.55);border-radius:50%;filter:blur(1px);opacity:0;}
-    .steam1{left:32px;animation:steamRise 2.6s ease-in infinite;}
-    .steam2{left:40px;animation:steamRise 2.6s ease-in infinite .6s;}
-    .steam3{left:48px;animation:steamRise 2.6s ease-in infinite 1.2s;}
-    @keyframes steamRise{0%{opacity:0;transform:translateY(0) scale(.6);}25%{opacity:.75;}100%{opacity:0;transform:translateY(-26px) scale(1.4);}}
-    .table-status-bar{display:flex;gap:8px;padding:8px 12px;overflow-x:auto;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:95;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:10px 16px;min-height:56px;display:flex;align-items:center;justify-content:flex-start;box-shadow:0 4px 20px rgba(231,76,60,.3);}
+    .header h1{font-size:17px;font-weight:700;letter-spacing:1px;}
+    .table-status-bar{display:flex;gap:8px;padding:8px 12px;overflow-x:auto;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:56px;z-index:95;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
     .table-status-bar::-webkit-scrollbar{display:none;}
     .table-chip{flex-shrink:0;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;border:2.5px solid transparent;background:#f5f5f5;color:var(--text-light);user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
     .table-chip.free{background:#fff;border-color:#d5d5d5;color:#9aa0a6;}
@@ -40,7 +21,7 @@
     .table-chip.active{background:var(--primary);border-color:var(--primary-dark);color:#fff;box-shadow:0 0 0 3px rgba(231,76,60,.18),0 4px 10px rgba(231,76,60,.35);}
     @keyframes tablePop{0%{transform:scale(1);}40%{transform:scale(1.15);}70%{transform:scale(.95);}100%{transform:scale(1);}}
     .table-chip.pop{animation:tablePop .4s ease;}
-    .categories{display:flex;gap:10px;padding:12px 16px;overflow-x:auto;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:124px;z-index:90;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .categories{display:flex;gap:10px;padding:12px 16px;overflow-x:auto;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:116px;z-index:90;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
     .categories::-webkit-scrollbar{display:none;}
     .cat-btn{flex-shrink:0;padding:8px 18px;border-radius:50px;border:none;background:var(--bg);color:var(--text);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;}
     .cat-btn.active{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(231,76,60,.35);}
@@ -57,9 +38,6 @@
     .grid-qty-badge.bounce{animation:badgeBounce .35s ease;}
     .grid-add-btn{margin-top:6px;width:32px;height:32px;border-radius:50%;border:none;background:var(--primary);color:#fff;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 8px rgba(231,76,60,.3);transition:transform .1s,background .15s;}
     .grid-add-btn:active{background:var(--primary-dark);transform:scale(.85);}
-    .table-action-bar{display:flex;gap:10px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--border);flex-wrap:wrap;}
-    .table-action-bar .info{flex:1;display:flex;align-items:center;font-size:14px;color:var(--text-light);min-width:120px;}
-    .table-action-bar .info strong{color:var(--primary);font-size:16px;margin:0 4px;}
     .btn-sm{padding:8px 16px;border-radius:50px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;}
     .btn-sm:active{transform:scale(.92);}
     .btn-sm.primary{background:var(--primary);color:#fff;}
@@ -176,17 +154,10 @@
     .manage-cat{background:var(--card);border-radius:12px;padding:12px;margin-bottom:12px;box-shadow:var(--shadow);}
     .manage-cat-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:8px;margin-bottom:8px;border-bottom:1px dashed var(--border);}
     .manage-cat-name{font-size:14px;font-weight:700;color:var(--primary);}
-    .manage-cat-actions{display:flex;gap:6px;}
-    .btn-mini{padding:5px 10px;border-radius:50px;border:none;font-size:12px;font-weight:600;cursor:pointer;transition:transform .1s;}
-    .btn-mini:active{transform:scale(.94);}
-    .btn-mini.add{background:var(--success);color:#fff;}
-    .btn-mini.del{background:#fee;color:var(--primary);}
-    .btn-mini.edit{background:#e8f4fd;color:#2980b9;}
     .manage-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f5f5f5;font-size:14px;}
     .manage-item:last-child{border-bottom:none;}
     .manage-item .mi-name{flex:1;}
     .manage-item .mi-price{color:var(--primary);font-weight:700;margin:0 10px;}
-    .manage-item .mi-actions{display:flex;gap:6px;}
     .manage-empty{text-align:center;padding:30px 20px;color:var(--text-light);font-size:13px;}
     .toast{position:fixed;top:20%;left:50%;transform:translateX(-50%) translateY(-10px);background:rgba(0,0,0,.78);color:#fff;padding:10px 24px;border-radius:50px;font-size:14px;z-index:999;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;max-width:80vw;text-align:center;overflow:hidden;text-overflow:ellipsis;}
     .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
@@ -196,24 +167,12 @@
 <body>
 
   <div class="header" id="appHeader">
-    <h1>宫头夜宵店</h1>
-    <div class="night-stall">
-      <div class="steam steam1"></div><div class="steam steam2"></div><div class="steam steam3"></div>
-      <div class="lantern"></div><div class="lantern-string"></div>
-      <div class="stall-roof"></div>
-      <div class="stall-body"><div class="stall-window"></div><div class="stall-sign" id="ledSign">宵</div></div>
-      <div class="stall-base"></div>
-    </div>
+    <h1>夜宵点餐系统</h1>
   </div>
 
   <div class="table-status-bar" id="tableStatusBar"></div>
 
   <div id="page-menu" class="page active">
-    <div class="table-action-bar" id="tableActionBar">
-      <div class="info" id="currentTableInfo">请选择桌台</div>
-      <button class="btn-sm primary" id="btnOpenTable" onclick="openTable()">开桌</button>
-      <button class="btn-sm success" id="btnAddDish" onclick="addDishToTable()" style="display:none">增菜</button>
-    </div>
     <div class="categories" id="categoryBar"></div>
     <div class="menu-grid" id="menuGrid"></div>
   </div>
@@ -224,15 +183,15 @@
 
   <div id="page-settings" class="page">
     <div class="settings">
-      <div class="setting-card"><h4>菜品管理</h4><p>直接编辑菜单分类和菜品，支持增删改。</p><button class="btn-outline" onclick="openManageModal()">进入菜品管理</button></div>
+      <div class="setting-card"><h4>菜单管理</h4><p>菜单为只读。如需修改，请编辑代码里的 DEFAULT_MENU 后刷新页面。</p><button class="btn-outline" onclick="openManageModal()">查看当前菜单</button></div>
       <div class="setting-card"><h4>划单说明</h4><p>在订单页，长按某个菜品约 0.8 秒即可划掉该菜品。</p></div>
       <div class="setting-card"><h4>撤回订单</h4><p>长按“开台中”标签约 0.8 秒，可撤回该桌所有未结账订单到购物车。</p></div>
-      <div class="setting-card"><h4>订单号规则</h4><p><b>ORD</b> + 今日序号(3位) + 排号(A1/B2) + 该桌今日开台次数(2位) + - + 点餐轮次(2位)<br>例如 <b>ORD005A202-2</b>：今日第 5 单、A 排 2 号桌、该桌今日第 2 次开台、第 2 轮点餐。</p></div>
-      <div class="setting-card"><h4>清空数据</h4><p>清空购物车、桌台状态和所有历史订单（不可恢复）。菜单不受影响。</p><button class="btn-danger" onclick="clearAllData()">清空全部数据</button></div>
+      <div class="setting-card"><h4>订单号规则</h4><p><b>ORD</b> + 今日序号(3位) + 排号(A1/B2) + 该桌今日开台次数(2位) + - + 点餐轮次(2位)<br>例如 <b>ORD005A202-2</b></p></div>
+      <div class="setting-card"><h4>清空数据</h4><p>清空购物车、桌台状态和所有历史订单（不可恢复）。</p><button class="btn-danger" onclick="clearAllData()">清空全部数据</button></div>
       <div class="setting-card"><h4>营业报表 PDF</h4><p>点击生成今日营业报表 PDF，长按可选择前几天。</p><button class="btn-outline" id="reportBtn" onmousedown="startReportLongPress()" onmouseup="endReportLongPress()" onmouseleave="endReportLongPress()" ontouchstart="startReportLongPress()" ontouchend="endReportLongPress()" onclick="if(!reportLongPressed){exportReportPDF(new Date());}">导出营业报表 PDF</button></div>
-      <div class="setting-card"><h4>恢复默认菜单</h4><p>将菜单恢复为系统默认菜品。</p><button class="btn-danger" onclick="resetMenu()">恢复默认菜单</button></div>
+      <div class="setting-card"><h4>恢复默认菜单</h4><p>恢复为代码内置的默认菜单。</p><button class="btn-danger" onclick="resetMenu()">恢复默认菜单</button></div>
       <div class="setting-card"><h4>键盘快捷键</h4><p><b>Enter</b>：确认弹窗操作<br><b>Esc</b>：关闭弹窗</p></div>
-      <div class="setting-card"><h4>关于</h4><p>宫头夜宵店 · 开桌点餐 · 58mm小票预览<br>版本 8.2 · 小票显示备注</p></div>
+      <div class="setting-card"><h4>关于</h4><p>夜宵点餐系统 · 开桌点餐 · 58mm小票预览<br>版本 10.2 · 1~6号桌 / 无状态栏</p></div>
     </div>
   </div>
 
@@ -264,17 +223,9 @@
   </div></div>
 
   <div class="modal-mask" id="manageModal"><div class="modal">
-    <div class="manage-header"><h3>菜品管理</h3><button class="btn-sm success" onclick="addCategory()">+ 新增分类</button></div>
+    <div class="manage-header"><h3>当前菜单（只读）</h3></div>
     <div id="manageList"></div>
-    <div class="modal-actions" style="margin-top:16px"><button class="btn-cancel" onclick="closeManageModal()">关闭</button></div>
-  </div></div>
-
-  <div class="modal-mask" id="itemEditModal"><div class="modal">
-    <h3 id="itemEditTitle">编辑菜品</h3>
-    <div class="form-group"><label>所属分类</label><select id="itemEditCategory"></select></div>
-    <div class="form-group"><label>菜品名称</label><input type="text" id="itemEditName" maxlength="20"></div>
-    <div class="form-group"><label>价格（元）</label><input type="number" id="itemEditPrice" min="0" step="0.5"></div>
-    <div class="modal-actions"><button class="btn-cancel" onclick="closeModal('itemEditModal')">取消</button><button class="btn-confirm" onclick="saveMenuItem()">保存</button></div>
+    <div class="modal-actions" style="margin-top:16px"><button class="btn-cancel" onclick="closeModal('manageModal')">关闭</button></div>
   </div></div>
 
   <div class="modal-mask" id="datePickerModal"><div class="modal">
@@ -287,43 +238,50 @@
 
   <script src="https://cdn.jsdelivr.net/npm/solarlunar@2.0.7/lib/solarlunar.min.js"></script>
   <script>
-    const DEFAULT_MENU=[
-      {category:"水饺",items:[
-        {id:1,name:"葱肉水饺",price:18,desc:"葱香肉馅"},
-        {id:2,name:"韭菜猪肉水饺",price:18,desc:"韭菜鲜香"},
-        {id:3,name:"白菜猪肉水饺",price:18,desc:"鲜嫩白菜"},
-        {id:4,name:"煎饺10个",price:10,desc:"外焦里嫩"},
+    const DEFAULT_MENU = [
+      { category: "水饺", items: [
+        { id: 1, name: "葱肉水饺", price: 18, desc: "" },
+        { id: 2, name: "韭菜猪肉水饺", price: 18, desc: "" },
+        { id: 3, name: "白菜猪肉水饺", price: 18, desc: "" },
+        { id: 4, name: "煎饺10个", price: 10, desc: "" },
       ]},
-      {category:"面条",items:[
-        {id:5,name:"炒粉干",price:15,desc:"经典炒粉"},
-        {id:6,name:"汤粉干",price:14,desc:"清汤粉干"},
-        {id:7,name:"炒河粉",price:16,desc:"锅气十足"},
+      { category: "面条", items: [
+        { id: 5, name: "炒粉干", price: 15, desc: "" },
+        { id: 6, name: "烫粉干", price: 10, desc: "" },
+        { id: 7, name: "炒河粉", price: 16, desc: "" },
+        { id: 8, name: "肉丝面", price: 12, desc: "" },
+        { id: 9, name: "青菜面", price: 5, desc: "" },
+        { id: 10, name: "荷包蛋", price: 2, desc: "" },
+        { id: 11, name: "卤蛋", price: 2, desc: "" },
+        { id: 12, name: "加一份肉丝", price: 6, desc: "" },
+        { id: 13, name: "葱抱蛋", price: 2, desc: "" },
+        { id: 14, name: "加一份卤小排", price: 8, desc: "" },
+        { id: 15, name: "加一份兰花干", price: 3, desc: "" },
       ]},
-      {category:"卤味",items:[
-        {id:8,name:"卤鸡腿",price:12,desc:"卤香入味"},
-        {id:9,name:"卤鸭翅",price:10,desc:"香辣入骨"},
-        {id:10,name:"卤鸭脖",price:15,desc:"麻辣鲜香"},
-        {id:11,name:"猪耳朵",price:18,desc:"脆爽有弹性"},
-        {id:12,name:"鸡爪",price:12,desc:"软糯入味"},
-        {id:13,name:"鸭锁骨",price:16,desc:"肉少骨香"},
-        {id:14,name:"猪脚",price:28,desc:"软糯弹牙"},
-        {id:15,name:"炸猪排",price:18,desc:"外酥里嫩"},
+      { category: "卤味", items: [
+        { id: 16, name: "卤鸡腿", price: 12, desc: "" },
+        { id: 17, name: "卤鸭翅", price: 10, desc: "" },
+        { id: 18, name: "卤鸭脖", price: 15, desc: "" },
+        { id: 19, name: "猪耳朵", price: 18, desc: "" },
+        { id: 20, name: "鸡爪", price: 12, desc: "" },
+        { id: 21, name: "鸭锁骨", price: 16, desc: "" },
+        { id: 22, name: "猪脚", price: 28, desc: "" },
+        { id: 23, name: "炸猪排", price: 18, desc: "" },
+        { id: 24, name: "鸭肠", price: 6, desc: "" },
       ]},
-      {category:"饮品",items:[
-        {id:16,name:"冰镇啤酒",price:8,desc:"冰镇畅快"},
-        {id:17,name:"可乐",price:5,desc:"冰镇可口"},
-        {id:18,name:"雪碧",price:5,desc:"冰镇雪碧"},
-        {id:19,name:"酸梅汤",price:8,desc:"自制解腻"},
-        {id:20,name:"豆浆",price:4,desc:"热/冰均可"},
-        {id:21,name:"绿茶",price:4,desc:"冰镇绿茶"},
+      { category: "饮品", items: [
+        { id: 25, name: "啤酒", price: 8, desc: "" },
+        { id: 26, name: "可乐", price: 5, desc: "" },
+        { id: 27, name: "雪碧", price: 5, desc: "" },
+        { id: 28, name: "老酒一杯", price: 6, desc: "" },
+        { id: 29, name: "冰红茶", price: 4, desc: "" },
+        { id: 30, name: "绿茶", price: 4, desc: "" },
       ]},
     ];
 
-    let MENU=JSON.parse(localStorage.getItem('em_menu')||'null');
-    const needReset=!MENU||MENU.some(c=>c.category==='粉干'||c.category==='小菜')||MENU.some(c=>c.items&&c.items.some(i=>i.name==='卤蛋'||i.name==='卤豆腐干'));
-    if(needReset){MENU=JSON.parse(JSON.stringify(DEFAULT_MENU));localStorage.setItem('em_menu',JSON.stringify(MENU));}
-    function saveMenu(){localStorage.setItem('em_menu',JSON.stringify(MENU));}
-    function getNextItemId(){let m=0;MENU.forEach(c=>c.items.forEach(i=>{if(i.id>m)m=i.id;}));return m+1;}
+    let MENU = JSON.parse(JSON.stringify(DEFAULT_MENU));
+    localStorage.setItem('em_menu', JSON.stringify(MENU));
+    function saveMenu(){ localStorage.setItem('em_menu', JSON.stringify(MENU)); }
 
     let cart=JSON.parse(localStorage.getItem('em_cart')||'{}');
     let orders=JSON.parse(localStorage.getItem('em_orders')||'[]');
@@ -332,10 +290,11 @@
     let selectedOrderIds=new Set();
     let selectedTable=null,pendingOrderTable=null,checkoutTable=null;
     let lastCheckoutBatches=JSON.parse(localStorage.getItem('em_batches')||'{}');
-    let editingItem=null;
     let reportLongPressed=false,reportLongPressTimer=null;
 
-    const TABLE_SEATS={'1':'A1','2':'A2','3':'A3','4':'A4','5':'B1','6':'B2','7':'B3','8':'B4','9':'B5'};
+    const TABLE_SEATS={'1':'A1','2':'A2','3':'A3','4':'A4','5':'A5','6':'A6'};
+    const TABLE_COUNT = 6;
+
     let dailyCounters=JSON.parse(localStorage.getItem('em_daily_counters')||'{}');
     let tableSeatCounters=JSON.parse(localStorage.getItem('em_seat_counters')||'{}');
     function saveDailyCounters(){localStorage.setItem('em_daily_counters',JSON.stringify(dailyCounters));}
@@ -361,7 +320,7 @@
       saveDailyCounters();saveSeatCounters();
     }
 
-    function initTables(){for(let i=1;i<=9;i++){const k=String(i);if(!tables[k])tables[k]={status:'free',orderIds:[]};}saveTables();}
+    function initTables(){for(let i=1;i<=TABLE_COUNT;i++){const k=String(i);if(!tables[k])tables[k]={status:'free',orderIds:[]};}saveTables();}
     function saveTables(){localStorage.setItem('em_tables',JSON.stringify(tables));}
     function saveCart(){localStorage.setItem('em_cart',JSON.stringify(cart));updateBadge();}
     function saveOrders(){localStorage.setItem('em_orders',JSON.stringify(orders));}
@@ -379,43 +338,47 @@
     function getWeekdayStr(d){return['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][d.getDay()];}
     function getAddDots(r){if(!r||r<=0)return '';return '.'.repeat(r);}
 
-    // ========== 桌台状态 ==========
+    // ========== 桌台状态（点击开台 / 再点收台） ==========
     function renderTableStatusBar(){
-      const bar=document.getElementById('tableStatusBar');let h='';
-      for(let i=1;i<=9;i++){const k=String(i);const t=tables[k];const isActive=selectedTable===k;const cls=t.status==='occupied'?'occupied':'free';
-        h+='<div class="table-chip '+cls+' '+(isActive?'active':'')+'" data-table="'+k+'" onclick="selectTable(\''+k+'\')">'+k+'号桌</div>';}
+      const bar=document.getElementById('tableStatusBar');
+      let h='';
+      for(let i=1;i<=TABLE_COUNT;i++){
+        const k=String(i);
+        const t=tables[k];
+        const isActive=selectedTable===k;
+        const cls=t.status==='occupied'?'occupied':'free';
+        h+='<div class="table-chip '+cls+' '+(isActive?'active':'')+'" data-table="'+k+'" onclick="onTableClick(\''+k+'\')">'+k+'号桌</div>';
+      }
       bar.innerHTML=h;
     }
-    function selectTable(k){selectedTable=k;renderTableStatusBar();updateTableActionBar();renderMenuGrid();}
-    function updateTableActionBar(){
-      const info=document.getElementById('currentTableInfo');
-      const btnOpen=document.getElementById('btnOpenTable');
-      const btnAdd=document.getElementById('btnAddDish');
-      const bar=document.getElementById('tableActionBar');
-      const oldBtn=document.getElementById('btnCheckoutTable');if(oldBtn)oldBtn.remove();
-      if(!selectedTable){info.innerHTML='请选择桌台';btnOpen.style.display='inline-block';btnOpen.disabled=true;btnAdd.style.display='none';return;}
-      const t=tables[selectedTable];
-      if(t.status==='free'){info.innerHTML='<strong>'+selectedTable+'</strong>号桌 · 空闲';btnOpen.style.display='inline-block';btnOpen.disabled=false;btnAdd.style.display='none';}
-      else{
-        const cnt=t.orderIds.length;
-        const total=t.orderIds.reduce((s,oid)=>{const o=orders.find(x=>x.id===oid);if(!o)return s;return s+o.items.filter(i=>!i.void).reduce((a,i)=>a+i.price*i.qty,0);},0);
-        const dots=getAddDots(cnt-1);const addInfo=dots?' '+dots:'';
-        info.innerHTML='<strong>'+selectedTable+'</strong>号桌 · 已开台 · '+cnt+'单'+addInfo+' · ¥'+total.toFixed(2);
-        btnOpen.style.display='none';btnAdd.style.display='inline-block';
-        const cbtn=document.createElement('button');cbtn.id='btnCheckoutTable';cbtn.className='btn-sm warning';cbtn.textContent='收桌结账';
-        cbtn.onclick=()=>openTableCheckout(selectedTable);bar.appendChild(cbtn);
+
+    function onTableClick(k){
+      const t=tables[k];
+      if(t.status==='free'){
+        selectedTable=k;
+        t.status='occupied';t.orderIds=[];saveTables();
+        renderTableStatusBar();renderMenuGrid();
+        vibrate(30);
+        const chip=document.querySelector('.table-chip[data-table="'+k+'"]');popElement(chip);
+        toast(k+'号桌已开台');
+      } else {
+        if(selectedTable===k){
+          openTableCheckout(k);
+        } else {
+          selectedTable=k;
+          renderTableStatusBar();renderMenuGrid();
+          vibrate(15);
+        }
       }
     }
 
-    function openTable(){
-      if(!selectedTable){toast('请先选择桌台');return;}
-      const t=tables[selectedTable];if(t.status==='occupied'){toast('该桌已开台');return;}
-      t.status='occupied';t.orderIds=[];saveTables();renderTableStatusBar();updateTableActionBar();vibrate(30);
-      const chip=document.querySelector('.table-chip[data-table="'+selectedTable+'"]');popElement(chip);
-      toast(selectedTable+'号桌已开台');
-    }
+    function selectTable(k){onTableClick(k);}
+
+    // 保留空实现，避免调用报错
+    function updateTableActionBar(){ return; }
+
     function addDishToTable(){
-      if(!selectedTable){toast('请先选择桌台');return;}
+      if(!selectedTable){toast('请先点击桌台');return;}
       const t=tables[selectedTable];if(t.status!=='occupied'){toast('该桌尚未开台');return;}
       cart={};saveCart();renderMenuGrid();vibrate(20);
       const nextDots=getAddDots(t.orderIds.length);const hint=nextDots?'（'+nextDots+'）':'';
@@ -445,8 +408,8 @@
       grid.innerHTML=h;
     }
     function changeQty(id,delta){
-      if(!selectedTable){toast('请先选择桌台');return;}
-      if(tables[selectedTable].status!=='occupied'){toast('请先开桌');return;}
+      if(!selectedTable){toast('请先点击桌台');return;}
+      if(tables[selectedTable].status!=='occupied'){toast('请先点击桌台开台');return;}
       const cur=cart[id]||0;const next=cur+delta;
       if(next<=0){delete cart[id];}else{cart[id]=next;}
       vibrate(delta>0?25:15);saveCart();
@@ -472,15 +435,15 @@
     function isAddDishOrder(t){const x=tables[t];return x&&x.status==='occupied'&&x.orderIds.length>0;}
     function openOrderModal(){
       if(getCartCount()===0){toast('购物车是空的');return;}
-      if(!selectedTable){toast('请先选择桌台');return;}
-      if(tables[selectedTable].status!=='occupied'){toast('请先开桌');return;}
+      if(!selectedTable){toast('请先点击桌台');return;}
+      if(tables[selectedTable].status!=='occupied'){toast('请先点击桌台开台');return;}
       pendingOrderTable=selectedTable;
       const addMode=isAddDishOrder(selectedTable);
       const dots=addMode?getAddDots(tables[selectedTable].orderIds.length):'';
       document.getElementById('orderModalTitle').textContent=(addMode?dots+' 增菜 · ':'确认下单 · ')+selectedTable+'号桌';
       document.getElementById('orderNote').value='';
       const selector=document.getElementById('orderTableSelector');let h='';
-      for(let i=1;i<=9;i++){const k=String(i);const t=tables[k];const isSel=k===pendingOrderTable;const cls=t.status==='occupied'?'occupied':'';
+      for(let i=1;i<=TABLE_COUNT;i++){const k=String(i);const t=tables[k];const isSel=k===pendingOrderTable;const cls=t.status==='occupied'?'occupied':'';
         h+='<div class="table-option '+cls+' '+(isSel?'selected':'')+'" onclick="selectOrderTable(\''+k+'\')">'+k+'号桌<span class="sub-label">'+(t.status==='occupied'?'已开台':'空闲')+'</span></div>';}
       selector.innerHTML=h;
       document.getElementById('orderModal').classList.add('show');
@@ -490,7 +453,7 @@
       const t=tables[k];if(t.status!=='occupied'){toast('该桌尚未开台');return;}
       pendingOrderTable=k;
       const selector=document.getElementById('orderTableSelector');let h='';
-      for(let i=1;i<=9;i++){const key=String(i);const tt=tables[key];const isSel=key===pendingOrderTable;const cls=tt.status==='occupied'?'occupied':'';
+      for(let i=1;i<=TABLE_COUNT;i++){const key=String(i);const tt=tables[key];const isSel=key===pendingOrderTable;const cls=tt.status==='occupied'?'occupied':'';
         h+='<div class="table-option '+cls+' '+(isSel?'selected':'')+'" onclick="selectOrderTable(\''+key+'\')">'+key+'号桌<span class="sub-label">'+(tt.status==='occupied'?'已开台':'空闲')+'</span></div>';}
       selector.innerHTML=h;
     }
@@ -510,7 +473,7 @@
       bounceBadge(document.getElementById('cartBadge'));
       const dots=isAdd?getAddDots(addRound):'';
       toast(isAdd?dots+' 增菜成功 · '+pendingOrderTable+'号桌':'下单成功 · '+pendingOrderTable+'号桌 · '+order.id);
-      setTimeout(()=>{renderTableStatusBar();updateTableActionBar();renderMenuGrid();switchPage('orders');},600);
+      setTimeout(()=>{renderTableStatusBar();renderMenuGrid();switchPage('orders');},600);
     }
 
     function renderOrders(){
@@ -590,7 +553,7 @@
       const idsToRemove=new Set(tableOrders.map(o=>o.id));
       orders=orders.filter(o=>!idsToRemove.has(o.id));saveOrders();
       t.status='free';t.orderIds=[];saveTables();
-      saveCart();renderTableStatusBar();updateTableActionBar();renderMenuGrid();renderCart();renderOrders();
+      saveCart();renderTableStatusBar();renderMenuGrid();renderCart();renderOrders();
       switchPage('cart');vibrate([40,60,40]);toast('已撤回 '+tableKey+'号桌订单到购物车');
     }
 
@@ -621,7 +584,7 @@
       if(!confirm('确定划掉「'+item.name+' ×'+item.qty+'」吗？'))return;
       item.void=true;
       order.total=order.items.filter(i=>!i.void).reduce((s,i)=>s+i.price*i.qty,0);
-      saveOrders();renderOrders();updateTableActionBar();vibrate(30);toast('已划单：'+item.name);
+      saveOrders();renderOrders();vibrate(30);toast('已划单：'+item.name);
     }
     function completeOrder(id){
       const order=orders.find(o=>o.id===id);
@@ -659,10 +622,9 @@
       t.status='free';t.orderIds=[];saveTables();
       closeModal('checkoutModal');showReceiptPreview(tableOrders);
       checkoutTable=null;selectedTable=null;
-      renderTableStatusBar();updateTableActionBar();renderMenuGrid();
+      renderTableStatusBar();renderMenuGrid();
     }
 
-    // ========== 收台小票 ==========
     function showTableReceipt(tableKey){
       const t=tables[tableKey];if(!t){toast('桌台不存在');return;}
       let tableOrders=[];
@@ -698,7 +660,6 @@
       document.getElementById('printModal').classList.add('show');
     }
 
-    // ========== 结账小票 ==========
     function showReceiptPreview(orderList){
       if(orderList.length===0){toast('没有订单');return;}
       orderList.sort((a,b)=>new Date(a.time)-new Date(b.time));
@@ -733,51 +694,26 @@
     }
     function printReceipt(){window.print();}
 
-    // ========== 菜品管理 ==========
-    function openManageModal(){renderManageList();document.getElementById('manageModal').classList.add('show');}
-    function closeManageModal(){closeModal('manageModal');renderCategories();renderMenuGrid();}
-    function renderManageList(){
+    function openManageModal(){
       const list=document.getElementById('manageList');
-      if(MENU.length===0){list.innerHTML='<div class="manage-empty">还没有分类</div>';return;}
       let h='';
-      MENU.forEach((cat,ci)=>{
-        h+='<div class="manage-cat"><div class="manage-cat-head"><span class="manage-cat-name">'+cat.category+'（'+cat.items.length+'）</span>'+
-          '<div class="manage-cat-actions"><button class="btn-mini add" onclick="addMenuItem('+ci+')">+ 菜品</button><button class="btn-mini edit" onclick="renameCategory('+ci+')">改名</button><button class="btn-mini del" onclick="deleteCategory('+ci+')">删分类</button></div></div>';
-        if(cat.items.length===0){h+='<div class="manage-empty" style="padding:12px">该分类暂无菜品</div>';}
-        else{cat.items.forEach((item,ii)=>{h+='<div class="manage-item"><span class="mi-name">'+item.name+'</span><span class="mi-price">¥'+item.price+'</span><div class="mi-actions"><button class="btn-mini edit" onclick="editMenuItem('+ci+','+ii+')">编辑</button><button class="btn-mini del" onclick="deleteMenuItem('+ci+','+ii+')">删除</button></div></div>';});}
+      MENU.forEach(cat=>{
+        h+='<div class="manage-cat"><div class="manage-cat-head"><span class="manage-cat-name">'+cat.category+'（'+cat.items.length+'）</span></div>';
+        if(cat.items.length===0){h+='<div class="manage-empty" style="padding:12px">暂无菜品</div>';}
+        else{cat.items.forEach(item=>{h+='<div class="manage-item"><span class="mi-name">'+item.name+'</span><span class="mi-price">¥'+item.price+'</span></div>';});}
         h+='</div>';
       });
       list.innerHTML=h;
+      document.getElementById('manageModal').classList.add('show');
     }
-    function addCategory(){const name=prompt('请输入新分类名称：');if(!name||!name.trim())return;const t=name.trim();if(MENU.find(c=>c.category===t)){toast('该分类已存在');return;}MENU.push({category:t,items:[]});saveMenu();renderManageList();toast('已新增分类：'+t);}
-    function renameCategory(ci){const old=MENU[ci].category;const name=prompt('修改分类名称：',old);if(!name||!name.trim())return;const t=name.trim();if(t===old)return;if(MENU.find(c=>c.category===t)){toast('该分类已存在');return;}MENU[ci].category=t;if(currentCategory===old)currentCategory=t;saveMenu();renderManageList();toast('已改名');}
-    function deleteCategory(ci){const cat=MENU[ci];if(!confirm('确定删除分类「'+cat.category+'」？'))return;MENU.splice(ci,1);saveMenu();renderManageList();toast('已删除分类');}
-    function addMenuItem(ci){editingItem={mode:'add',catIndex:ci,itemIndex:-1};openItemEditModal('新增菜品');}
-    function editMenuItem(ci,ii){editingItem={mode:'edit',catIndex:ci,itemIndex:ii};openItemEditModal('编辑菜品');}
-    function openItemEditModal(title){
-      document.getElementById('itemEditTitle').textContent=title;
-      const sel=document.getElementById('itemEditCategory');
-      sel.innerHTML=MENU.map((c,i)=>'<option value="'+i+'"'+(i===editingItem.catIndex?' selected':'')+'>'+c.category+'</option>').join('');
-      if(editingItem.mode==='edit'){const item=MENU[editingItem.catIndex].items[editingItem.itemIndex];document.getElementById('itemEditName').value=item.name;document.getElementById('itemEditPrice').value=item.price;}
-      else{document.getElementById('itemEditName').value='';document.getElementById('itemEditPrice').value='';}
-      document.getElementById('itemEditModal').classList.add('show');
-      setTimeout(()=>document.getElementById('itemEditName').focus(),200);
-    }
-    function saveMenuItem(){
-      const name=document.getElementById('itemEditName').value.trim();
-      const price=parseFloat(document.getElementById('itemEditPrice').value);
-      const catIndex=parseInt(document.getElementById('itemEditCategory').value,10);
-      if(!name){toast('请输入菜品名称');return;}
-      if(isNaN(price)||price<0){toast('请输入正确价格');return;}
-      if(!MENU[catIndex]){toast('分类不存在');return;}
-      if(editingItem.mode==='add'){MENU[catIndex].items.push({id:getNextItemId(),name,price,desc:''});toast('已添加：'+name);}
-      else{const oc=editingItem.catIndex;const oi=editingItem.itemIndex;const item=MENU[oc].items[oi];item.name=name;item.price=price;if(oc!==catIndex){MENU[oc].items.splice(oi,1);MENU[catIndex].items.push(item);}toast('已保存：'+name);}
-      saveMenu();closeModal('itemEditModal');renderManageList();
-    }
-    function deleteMenuItem(ci,ii){const item=MENU[ci].items[ii];if(!confirm('确定删除菜品「'+item.name+'」？'))return;MENU[ci].items.splice(ii,1);saveMenu();renderManageList();toast('已删除：'+item.name);}
-    function resetMenu(){if(!confirm('确定恢复默认菜单吗？'))return;MENU=JSON.parse(JSON.stringify(DEFAULT_MENU));saveMenu();currentCategory=MENU[0]?MENU[0].category:'';renderCategories();renderMenuGrid();renderManageList();toast('已恢复默认菜单');}
 
-    // ========== 营业报表 PDF ==========
+    function resetMenu(){
+      if(!confirm('确定恢复默认菜单吗？'))return;
+      MENU=JSON.parse(JSON.stringify(DEFAULT_MENU));
+      saveMenu();currentCategory=MENU[0]?MENU[0].category:'';
+      renderCategories();renderMenuGrid();toast('已恢复默认菜单');
+    }
+
     function exportReportPDF(dateObj){
       const dateStr=dateObj.toLocaleDateString('zh-CN');
       const dayOrders=orders.filter(o=>o.time.split(' ')[0]===dateStr);
@@ -882,7 +818,7 @@
         selectedOrderIds.clear();selectedTable=null;
         initTables();saveCart();saveOrders();
         localStorage.setItem('em_batches','{}');saveDailyCounters();saveSeatCounters();
-        renderTableStatusBar();updateTableActionBar();renderMenuGrid();renderCart();renderOrders();
+        renderTableStatusBar();renderMenuGrid();renderCart();renderOrders();
         toast('已清空全部数据');
       }
     }
@@ -896,28 +832,27 @@
     }
 
     function closeModal(id){document.getElementById(id).classList.remove('show');}
-    ['orderModal','checkoutModal','printModal','manageModal','itemEditModal','datePickerModal'].forEach(id=>{
+    ['orderModal','checkoutModal','printModal','manageModal','datePickerModal'].forEach(id=>{
       const el=document.getElementById(id);
-      if(el)el.addEventListener('click',function(e){if(e.target===this){if(id==='manageModal')closeManageModal();else closeModal(id);}});
+      if(el)el.addEventListener('click',function(e){if(e.target===this){closeModal(id);}});
     });
 
     document.addEventListener('keydown',function(e){
       if(e.key==='Escape'||e.key==='Esc'){
-        const openModals=['orderModal','checkoutModal','printModal','manageModal','itemEditModal','datePickerModal'].filter(id=>document.getElementById(id).classList.contains('show'));
-        if(openModals.length>0){const topId=openModals[openModals.length-1];if(topId==='manageModal')closeManageModal();else closeModal(topId);e.preventDefault();}
+        const openModals=['orderModal','checkoutModal','printModal','manageModal','datePickerModal'].filter(id=>document.getElementById(id).classList.contains('show'));
+        if(openModals.length>0){const topId=openModals[openModals.length-1];closeModal(topId);e.preventDefault();}
         return;
       }
       if(e.key==='Enter'){
         const tag=(e.target.tagName||'').toLowerCase();if(tag==='textarea')return;
         if(document.getElementById('orderModal').classList.contains('show')){e.preventDefault();submitOrder();return;}
         if(document.getElementById('checkoutModal').classList.contains('show')){e.preventDefault();confirmCheckout();return;}
-        if(document.getElementById('itemEditModal').classList.contains('show')){e.preventDefault();saveMenuItem();return;}
         if(document.getElementById('printModal').classList.contains('show')){e.preventDefault();printReceipt();return;}
         if(document.getElementById('datePickerModal').classList.contains('show')){e.preventDefault();exportSelectedDateReport();return;}
       }
     });
 
-    cleanupCounters();initTables();renderTableStatusBar();renderCategories();renderMenuGrid();updateBadge();updateTableActionBar();
+    cleanupCounters();initTables();renderTableStatusBar();renderCategories();renderMenuGrid();updateBadge();
   </script>
 </body>
 </html>
